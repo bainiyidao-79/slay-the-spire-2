@@ -25,25 +25,6 @@ export function HomeView() {
             <HeroVideo />
           </div>
 
-          {/* CTA 按钮 */}
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href={siteConfig.primaryCtaHref}
-              className="inline-flex items-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
-            >
-              {siteConfig.primaryCtaLabel}
-            </Link>
-            {siteConfig.platformUrl && (
-              <a
-                href={siteConfig.platformUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition hover:bg-muted/60"
-              >
-                Play Now
-              </a>
-            )}
-          </div>
         </section>
 
         {/* Trending Now（按配置生成，不填则隐藏） */}
@@ -164,24 +145,6 @@ export function HomeView() {
         )}
 
         {/* 底部 CTA 大横幅（光晕容器，按配置生成） */}
-        {siteConfig.ctaBanner && (
-          <section className="glow-cta mb-6 rounded-2xl border border-border/60 bg-card p-8 text-center sm:p-12">
-            <h2 className="mx-auto max-w-2xl font-serif text-3xl font-medium tracking-tight sm:text-4xl">
-              {siteConfig.ctaBanner.title}
-            </h2>
-            {siteConfig.ctaBanner.description && (
-              <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground">
-                {siteConfig.ctaBanner.description}
-              </p>
-            )}
-            <Link
-              href={siteConfig.ctaBanner.buttonHref}
-              className="mt-6 inline-flex items-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
-            >
-              {siteConfig.ctaBanner.buttonLabel}
-            </Link>
-          </section>
-        )}
       </main>
     </div>
   );
