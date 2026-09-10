@@ -1,0 +1,72 @@
+---
+title: "Slay The Spire 2 Mods: Workshop, Nexus & Cheat Engine"
+description: "Slay the Spire 2 mods guide: the best Steam Workshop mods, how to install Nexus mods step by step, and the Cheat Engine table with all 13 options explained."
+keywords: ["slay the spire 2 mods", "slay the spire 2 cheat engine", "how to mod slay the spire 2"]
+date: "2026-09-10"
+updated: "2026-09-10"
+category: "guides"
+readTime: "6 min read"
+sources:
+  - "guide/slay-the-spire-2-mods.md"
+  - "guide/how-to-mod-slay-the-spire-2.md"
+  - "guide/slay-the-spire-2-cheat-engine.md"
+---
+
+Slay the Spire 2 is modded in two ways: **Steam Workshop mods** (one-click subscribe, the easiest route) and **Nexus Mods** (manual download, extract, and install into the game directory). On top of that, there's a **Cheat Engine table** that works as a runtime trainer with options like infinite health, unlimited energy, and editable gold. This guide covers where to get mods, how to install them step by step, and exactly what the current Cheat Engine table can do.
+
+## Where to Get Slay the Spire 2 Mods
+
+Slay the Spire 2 has an official **Steam Workshop** (app 2868840) — the game's hub states plainly: "You can find mods for Slay the Spire 2 here!" You can browse it in the Steam client under the game's Workshop tab, sort by Most Popular, Most Subscribed, or Best rated in the past three months, and subscribe to install automatically.
+
+**What the Workshop holds right now** — the catalog mixes several categories:
+
+- **Crossover and character content:** Noctis (FFXV) Playable Character, Kamen Rider Kuuga (Beta Branch), Kamen Rider Decade, Madoka Kaname, Balatro, and the full-conversion 弈仙塔 YiXian Spire, among others.
+- **Art and visual packs:** Pixel Potions, Necrobinder Doodle Card Art, Better Defense Animations, BossSkin, and map reskins like the Arknights-themed map mod.
+- **Gameplay and UI utilities:** Relic Rewards: Choose One of Three, Better Mod Menu, Intent Graph, Orichalcum Indicator, and Bullet Time As Depicted.
+
+The most-subscribed entries at collection time: 劣人TV之尖塔MOD (3,133 ratings), Regent FX Omnistar (3,125), RitsuLib (3,144), Minty Spire 2 (1,583), and Intent Graph (997).
+
+**Dependency libraries — install these if a mod requires them.** The Workshop flags a "Most Required by Other Items" section for mods that other mods need to function: **BaseLib**, **RitsuLib**, **STS2 Mod Translator**, **ModConfig (皮皮配置)**, and **MinionLib**. If a mod's page lists a requirement, subscribe to the library too, or the mod won't load.
+
+## How to Install Slay the Spire 2 Mods (Nexus Mods)
+
+For mods distributed on Nexus Mods rather than the Workshop, the standard install flow — as laid out in the popular "How to Install Mods in Slay the Spire 2 (Easy Guide)" tutorial (40K+ views, March 2026) — is:
+
+1. **Run the game once before modding.** Launch Slay the Spire 2 at least one time first so the game generates the folders modding depends on.
+2. **Locate the game directory.** Find the game's installation folder (the tutorial walks through this; the exact default path isn't documented in our sources — through Steam's library tools is the usual route).
+3. **Head to Nexus Mods** and find the Slay the Spire 2 section. Two starter picks named in the tutorial: **Better Spire 2** and **DevConsole With Unlocked Achievements**.
+4. **Download the mods you want.**
+5. **Extract and install** the downloaded archives into the game directory per each mod's instructions.
+6. **Know where your saves are** (the tutorial covers the save file location; the path itself is **to be confirmed** in our sources).
+7. **Test.** Launch and confirm the mod loads. If mods aren't working, the tutorial's advice is to double-check your install path and any required tools before anything else.
+
+## Slay the Spire 2 Cheat Engine: Table, Options, and How to Use It
+
+If you'd rather not install mods at all, there's a **Cheat Engine table (CT)** for the game on the FearlessRevolution forums: FreshMods' **"Slay the Spire 2 Steam v1.0 Cheat Engine Table"** — the initial release for the full v1.0 game. The table's header lists the game as running on the **Godot engine** (process: Slay the Spire 2.exe) and available on Steam, Epic, and the Microsoft Store/Xbox Game Pass; it was tested on the Steam version and may also work on the Microsoft Store build. The table file (SlayTheSpire2frf.CT, 3.9 KiB) had been downloaded 15,986 times at collection time.
+
+**Requirements:** a minimum of Cheat Engine 7.0 — older versions should still work per the author, but 7.0+ is the stated baseline.
+
+**The 13 options:**
+
+| Group | Option |
+| --- | --- |
+| Enable | Master enable toggle |
+| Player | Infinite Health, Easy Kills, Unlimited Energy |
+| Stats | Edit Health, Max Health, Edit Energy, Max Energy, Edit Gold |
+| Speed | Edit Game Speed |
+
+**How to use the table** (per the author's instructions):
+
+1. Install Cheat Engine.
+2. Double-click the .CT file to open it.
+3. Click the PC icon in Cheat Engine to select the game process.
+4. Keep the list.
+5. Activate the trainer options by checking boxes or setting values from 0 to 1.
+
+**Community-reported quirks:** one user found the cheats did nothing until they loaded into a fight and took a hit, after which the options kicked in — so don't panic if the table seems dead on the main menu. Common feature requests not yet in the table include an unlock-everything option, a damage/defense multiplier, free shop purchases, and reward-card editing. Editing the `progress.save` file's `max_ascension` value has also been reported to fail — the game overwrites the file on relaunch. Our sources don't document any anti-cheat or achievement consequences for using Cheat Engine, so treat that as untested territory.
+
+## Why Modding Took Off Quickly: the Godot Factor
+
+Background worth knowing: Slay the Spire 2 runs on **Godot** — the biggest Godot release to date — and the entire project was decompiled and explored publicly shortly after launch. The extracted project showed most core logic is C++ with some GDScript, and that Mega Crit built an internal content-creator add-on for quickly prototyping cards, powers, relics, and monsters. That tooling and the engine's openness are a big part of why a Workshop catalog with thousands of ratings formed within months.
+
+Mods and trainers change how runs feel, but the fundamentals don't move: for the deckbuilding principles that make wins repeatable, read our [Slay the Spire 2 tips](/guides/tips), and for the fights you'll be practicing against, see the [boss guide](/bosses/bosses).
