@@ -63,6 +63,8 @@ export type SiteConfig = {
     sidebar?: string;
     /** 页面底部 banner 广告位（页脚上方，每页都有） */
     footerBanner?: string;
+    /** 左右浮动竖幅广告位（160x600 sticky，扬哥 2026-09-11 定标：超长页广告必须全程可见；留空则完全不渲染不可感知） */
+    sideRail?: string;
   };
 
   // 可选：FAQ

@@ -56,7 +56,7 @@ export default async function TreePage({
         <main className="flex-1 p-6 lg:p-8">
           <h1 className="text-3xl font-bold text-foreground">
             {sectionLabel}
-            {dir.path.includes("/") ? ` — ${dir.name.replace(/-/g, " ")}` : ""}
+            {dir.path.includes("/") ? ` — ${dir.name.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}` : ""}
           </h1>
 
           {introHtml ? (

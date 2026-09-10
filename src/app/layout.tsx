@@ -4,6 +4,7 @@ import { Analytics } from "@/components/Analytics";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Sidebar } from "@/components/Sidebar";
+import { SideRailAds } from "@/components/SideRailAds";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ export default function RootLayout({
           <div className="flex min-h-[calc(100vh-3.5rem)] flex-1 flex-col">
             {children}
             <Footer />
+      <SideRailAds />
           </div>
         </div>
         <Analytics />

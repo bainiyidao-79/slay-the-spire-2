@@ -15,11 +15,11 @@ export function FavoriteButton({ mini = false }: { mini?: boolean }) {
         setTipped(true);
         setTimeout(() => setTipped(false), 2600);
       }}
-      title="收藏本页"
-      aria-label="收藏本页"
+      title="Bookmark this page"
+      aria-label="Bookmark this page"
       className={`fav-btn${mini ? " mini" : ""}`}
     >
-      {tipped ? "按 Ctrl + D 完成收藏 ✓" : "★ 收藏本站"}
+      {tipped ? "Press Ctrl + D to finish ✓" : "★ Bookmark This Page"}
     </button>
   );
 }

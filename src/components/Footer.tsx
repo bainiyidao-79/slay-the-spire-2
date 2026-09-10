@@ -22,7 +22,7 @@ export function Footer() {
         <div className="flex flex-wrap items-center justify-between gap-4">
           {siteConfig.contactEmail && (
             <p>
-              联系我们（商务 / 合作 / 建议）：
+              Contact (business / partnerships / feedback): 
               <a href={`mailto:${siteConfig.contactEmail}`} className="text-foreground transition hover:text-primary">
                 {siteConfig.contactEmail}
               </a>

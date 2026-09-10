@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Home } from "lucide-react";
+import { ChevronDown, Home } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { siteConfig, type NavGroup } from "@/config/site";
 import { AdSlot } from "@/components/AdSlot";
@@ -24,17 +24,23 @@ function NavItem({ label, href }: { label: string; href: string }) {
 }
 
 function NavGroup({ group }: { group: NavGroup }) {
+  // 折叠目录树（扬哥 2026-09-11：超长侧栏按组收起）——原生 details，无 JS 状态，零崩溃风险
+  const pathname = usePathname();
+  const containsActive = group.children.some(
+    (item) => pathname === item.href || pathname.startsWith(item.href + "/")
+  );
   return (
-    <div className="mb-4">
-      <div className="mb-1 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">
+    <details className="group/nav mb-3" open={containsActive}>
+      <summary className="mb-1 flex cursor-pointer select-none list-none items-center justify-between rounded-md px-2 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground/50 transition-colors hover:bg-muted/40 hover:text-muted-foreground [&::-webkit-details-marker]:hidden">
         {group.title}
-      </div>
-      <div className="space-y-0.5">
+        <ChevronDown className="size-3 shrink-0 transition-transform group-open/nav:rotate-180" />
+      </summary>
+      <div className="space-y-0.5 pt-0.5">
         {group.children.map((item) => (
           <NavItem key={item.href} label={item.label} href={item.href} />
         ))}
       </div>
-    </div>
+    </details>
   );
 }
 
