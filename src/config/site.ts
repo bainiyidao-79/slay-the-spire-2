@@ -18,6 +18,8 @@ export type SiteConfig = {
 
   // 官方链接
   platformUrl?: string;
+  /** 联系邮箱（页脚「联系我们」；留空/不填则页脚不显示该行）——扬哥待定中 */
+  contactEmail?: string;
   discordUrl?: string;
   youtubeChannelUrl?: string;
 
@@ -84,7 +86,7 @@ export const siteConfig: SiteConfig = {
   keywords: ["slay the spire 2", "slay the spire 2 wiki", "slay the spire 2 builds", "slay the spire 2 tier list", "slay the spire 2 release date"],
 
   // ⚠️ 导航由 gen_nav.py 按 菜单-页面清单.json 自动生成（v2, 2026-09-10）——勿手改，重新生成后整段替换
-  // ⚠️ v3 树状导航（18+ 文章 + 栏目全量）
+  // ⚠️ v3 树状导航（内容框架2.0 全量：6+3+22+4+1+5 = 41 条，手工登记）
   nav: [
     { title: "Characters", children: [
       { label: "Characters Overview", href: "/characters" },
@@ -97,14 +99,39 @@ export const siteConfig: SiteConfig = {
     { title: "Cards Database", children: [
       { label: "Card Tier List", href: "/cards/tier-list" },
       { label: "Ironclad Cards", href: "/cards/ironclad" },
+      { label: "Silent Cards", href: "/cards/silent" },
+      { label: "Defect Cards", href: "/cards/defect" },
       { label: "Regent Cards", href: "/cards/regent" },
+      { label: "Necrobinder Cards", href: "/cards/necrobinder" },
+    ] },
+    { title: "Relics · Enemies · Events", children: [
+      { label: "Relic Library (299)", href: "/relics" },
+      { label: "Enemy Compendium (99)", href: "/enemies" },
+      { label: "Event Choices (60)", href: "/events" },
     ] },
     { title: "Builds", children: [
       { label: "Builds Overview", href: "/builds/builds-overview" },
-      { label: "Ironclad Builds", href: "/builds/builds-ironclad" },
-      { label: "Silent Build", href: "/builds/builds-silent" },
-      { label: "Defect Builds", href: "/builds/builds-defect" },
-      { label: "Regent Builds", href: "/builds/builds-regent" },
+      { label: "Ironclad Builds Hub", href: "/builds/builds-ironclad" },
+      { label: "Ironclad Dominate Build", href: "/builds/ironclad-dominate-build" },
+      { label: "Ironclad Exhaust Build", href: "/builds/ironclad-exhaust-build" },
+      { label: "Ironclad Strikes Build", href: "/builds/ironclad-strikes-build" },
+      { label: "Silent Build Hub", href: "/builds/builds-silent" },
+      { label: "Silent Sly Build", href: "/builds/silent-sly-build" },
+      { label: "Silent Shiv Build", href: "/builds/silent-shiv-build" },
+      { label: "Silent Poison Build", href: "/builds/silent-poison-build" },
+      { label: "Defect Build Hub", href: "/builds/builds-defect" },
+      { label: "Defect Frost Build", href: "/builds/defect-frost-build" },
+      { label: "Defect Lightning Build", href: "/builds/defect-lightning-build" },
+      { label: "Defect Dark Build", href: "/builds/defect-dark-build" },
+      { label: "Defect Claw Build", href: "/builds/defect-claw-build" },
+      { label: "Regent Build Hub", href: "/builds/builds-regent" },
+      { label: "Regent Starfall Build", href: "/builds/regent-starfall-build" },
+      { label: "Regent Star Mid-Range Build", href: "/builds/regent-star-midrange-build" },
+      { label: "Regent Forge Build", href: "/builds/regent-forge-build" },
+      { label: "Regent Infinites Build", href: "/builds/regent-infinites-build" },
+      { label: "Necrobinder Build Hub", href: "/builds/builds-necrobinder" },
+      { label: "Necrobinder Doom Build", href: "/builds/necrobinder-doom-build" },
+      { label: "Necrobinder Osty Build", href: "/builds/necrobinder-osty-build" },
     ] },
     { title: "Guides", children: [
       { label: "Beginner Tips", href: "/guides/tips" },
@@ -125,11 +152,12 @@ export const siteConfig: SiteConfig = {
   ],
 
   topNav: [
-    { label: "Characters", href: "/characters" },
-    { label: "Cards Database", href: "/cards" },
-    { label: "Builds", href: "/builds/builds-overview" },
-    { label: "Patch Notes", href: "/news/patch-notes" },
-    { label: "Game Overview", href: "/game-overview/what-is" },
+    { label: "What Is Slay The Spire 2?", href: "/intro/what-is" },
+    { label: "Release Date & Platforms", href: "/release/release-date-and-platforms" },
+    { label: "Reviews & Reception", href: "/review/reviews-and-reception" },
+    { label: "Tier List", href: "/guide/tier-list" },
+    { label: "Characters & Classes", href: "/intro/characters-and-classes" },
+    { label: "Mods & Tools", href: "/guide/mods" },
   ],
 
   // ⚠️ 官方频道 @MegaCrit 最高播放（150万）EA 预告

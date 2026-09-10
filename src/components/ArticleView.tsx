@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { FavoriteButton } from "@/components/FavoriteButton";
 
 type ArticleViewProps = {
   title: string;
@@ -31,12 +32,19 @@ export function ArticleView({
         />
 
         <article className="mt-6">
-          <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
-            {title}
-          </h1>
-          {description && (
-            <p className="mt-3 max-w-2xl text-muted-foreground">{description}</p>
-          )}
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
+                {title}
+              </h1>
+              {description && (
+                <p className="mt-3 max-w-2xl text-muted-foreground">
+                  {description}
+                </p>
+              )}
+            </div>
+            <FavoriteButton />
+          </div>
 
           {/* 文章正文（支持图文混排） */}
           <div

@@ -20,6 +20,14 @@ export function Footer() {
       )}
       <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="flex flex-wrap items-center justify-between gap-4">
+          {siteConfig.contactEmail && (
+            <p>
+              联系我们（商务 / 合作 / 建议）：
+              <a href={`mailto:${siteConfig.contactEmail}`} className="text-foreground transition hover:text-primary">
+                {siteConfig.contactEmail}
+              </a>
+            </p>
+          )}
           <p>
             {siteConfig.name} — Fan-made wiki. Not affiliated with the game
             developer.

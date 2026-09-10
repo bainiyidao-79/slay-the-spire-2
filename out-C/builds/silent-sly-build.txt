@@ -1,0 +1,125 @@
+1:"$Sreact.fragment"
+2:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","180","static/chunks/app/%5B...path%5D/page-c4a5ac9ca7155658.js"],""]
+3:I[2294,["619","static/chunks/619-ba102abea3e3d0e4.js","177","static/chunks/app/layout-0e7ac220c4f0bb89.js"],"Sidebar"]
+4:I[9766,[],""]
+5:I[8924,[],""]
+e:I[7150,[],""]
+:HL["/_next/static/css/328c9cde80960483.css","style"]
+0:{"P":null,"b":"8b-E3Is-kjsvjlYiV5y7c","p":"","c":["","builds","silent-sly-build"],"i":false,"f":[[["",{"children":[["path","builds/silent-sly-build","c"],{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/328c9cde80960483.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"dark","style":{"colorScheme":"dark"},"children":["$","body",null,{"className":"min-h-screen bg-background text-foreground antialiased","children":[["$","header",null,{"className":"sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-sm","children":["$","div",null,{"className":"mx-auto flex min-h-14 max-w-7xl items-center justify-between gap-3 px-4 py-1.5","children":[["$","div",null,{"className":"flex min-w-0 items-center gap-2.5","children":[["$","$L2",null,{"href":"/","className":"flex min-w-0 items-center gap-2","children":[["$","span",null,{"className":"text-base font-bold leading-tight tracking-tight text-foreground sm:text-lg","children":"Slay the Spire 2 Wiki"}],["$","span",null,{"className":"hidden text-[9px] font-semibold uppercase tracking-[0.25em] text-primary lg:inline","children":"Roguelike Deckbuilder"}]]}],["$","$L2",null,{"href":"/","aria-label":"Back to home","className":"inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground transition hover:border-primary/40 hover:bg-muted/60","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-house size-3.5","children":[["$","path","5wwlr5",{"d":"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"}],["$","path","1d0kgt",{"d":"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"}],"$undefined"]}],"Home"]}]]}],["$","nav",null,{"className":"hidden items-center gap-5 text-[13px] font-medium md:flex","children":[[["$","$L2","/intro/what-is",{"href":"/intro/what-is","className":"text-muted-foreground transition hover:text-foreground","children":"What Is Slay The Spire 2?"}],["$","$L2","/release/release-date-and-platforms",{"href":"/release/release-date-and-platforms","className":"text-muted-foreground transition hover:text-foreground","children":"Release Date & Platforms"}],["$","$L2","/review/reviews-and-reception",{"href":"/review/reviews-and-reception","className":"text-muted-foreground transition hover:text-foreground","children":"Reviews & Reception"}],["$","$L2","/guide/tier-list",{"href":"/guide/tier-list","className":"text-muted-foreground transition hover:text-foreground","children":"Tier List"}],["$","$L2","/intro/characters-and-classes",{"href":"/intro/characters-and-classes","className":"text-muted-foreground transition hover:text-foreground","children":"Characters & Classes"}],["$","$L2","/guide/mods",{"href":"/guide/mods","className":"text-muted-foreground transition hover:text-foreground","children":"Mods & Tools"}]],["$","a",null,{"href":"https://store.steampowered.com/app/2868840/","target":"_blank","rel":"noopener noreferrer","className":"rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground transition hover:opacity-90","children":"Play Now"}]]}]]}]}],["$","div",null,{"className":"mx-auto flex max-w-7xl","children":[["$","$L3",null,{}],["$","div",null,{"className":"flex min-h-[calc(100vh-3.5rem)] flex-1 flex-col","children":[["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":["$L6","$L7","$L8"]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],"$L9"]}]]}],"$La"]}]}]]}],{"children":[["path","builds/silent-sly-build","c"],"$Lb",{"children":["__PAGE__","$Lc",{},null,false]},null,false]},null,false],"$Ld",false]],"m":"$undefined","G":["$e",[]],"s":false,"S":true}
+10:I[4431,[],"OutletBoundary"]
+12:I[5278,[],"AsyncMetadataOutlet"]
+14:I[4431,[],"ViewportBoundary"]
+16:I[4431,[],"MetadataBoundary"]
+17:"$Sreact.suspense"
+6:["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}]
+7:["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}]
+8:["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]
+9:["$","footer",null,{"className":"mt-auto border-t border-border/60 bg-background/60 text-sm text-muted-foreground","children":["$undefined",["$","div",null,{"className":"mx-auto max-w-7xl px-4 py-8","children":["$","div",null,{"className":"flex flex-wrap items-center justify-between gap-4","children":[["$","p",null,{"children":["Slay the Spire 2 Wiki"," — Fan-made wiki. Not affiliated with the game developer."]}],["$","a",null,{"href":"https://store.steampowered.com/app/2868840/","target":"_blank","rel":"noopener noreferrer","className":"text-xs text-muted-foreground/70 transition hover:text-foreground","children":"Official Store Page ↗"}]]}]}]]}]
+a:null
+b:["$","$1","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+c:["$","$1","c",{"children":["$Lf",null,["$","$L10",null,{"children":["$L11",["$","$L12",null,{"promise":"$@13"}]]}]]}]
+d:["$","$1","h",{"children":[null,[["$","$L14",null,{"children":"$L15"}],null],["$","$L16",null,{"children":["$","div",null,{"hidden":true,"children":["$","$17",null,{"fallback":null,"children":"$L18"}]}]}]]}]
+19:Tff7,<p>The community guide calls <strong>Sly</strong> probably the most powerful mechanic on any character — this discard-fueled route is the Silent&#39;s best-by-far build.</p>
+<h2>The Sly Discard Engine (Best Route)</h2>
+<p><strong>Play pattern:</strong> stack discard enablers and Sly payoffs until &quot;discard a card&quot; means &quot;play a card for free.&quot; The video guide is blunt: &quot;right now Sly is just so good that there&#39;s almost no reason to do anything else.&quot;</p>
+<p><strong>Core cards:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Card</th>
+<th>Cost</th>
+<th>Effect</th>
+<th>Why it earns a slot</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Prepared</td>
+<td>—</td>
+<td>Draw and discard (upgraded: draw 2, discard 2)</td>
+<td>The best enabler — upgraded Prepared is &quot;twice as good&quot;</td>
+</tr>
+<tr>
+<td>Acrobatics</td>
+<td>—</td>
+<td>Draw cards</td>
+<td>&quot;You&#39;ll never stop taking Acrobatics until the day you die&quot;; now uncommon on beta</td>
+</tr>
+<tr>
+<td>Calculated Gamble</td>
+<td>—</td>
+<td>Discard your hand, redraw it</td>
+<td>With Sly in play it reads &quot;play most of your hand for free, then draw seven&quot;</td>
+</tr>
+<tr>
+<td>Tools of the Trade</td>
+<td>—</td>
+<td>Filters your hand every turn</td>
+<td>Three copies solve the archetype: a guaranteed discard every turn means a free Sly card every turn</td>
+</tr>
+<tr>
+<td>Dagger Throw</td>
+<td>—</td>
+<td>Damage plus draw 1, discard 1</td>
+<td>Take every copy in Act 1; weaker in Acts 2–3 as Acrobatics/Prepared outclass it</td>
+</tr>
+<tr>
+<td>Backflip</td>
+<td>—</td>
+<td>Draw plus Block</td>
+<td>&quot;There&#39;s almost no limit&quot; — the video would happily run six</td>
+</tr>
+<tr>
+<td>Hidden Daggers</td>
+<td>0</td>
+<td>Two discards that also grant two Shivs</td>
+<td>The bridge card: two discards for Sly plus entry into the Shiv plan</td>
+</tr>
+<tr>
+<td>Hand Trick</td>
+<td>—</td>
+<td>Gives Sly to any Skill in your hand this turn; also Blocks for a lot</td>
+<td>Great once you have plenty of discard — Hand Trick a Backflip, then discard it for a free play</td>
+</tr>
+<tr>
+<td>Well-Laid Plans</td>
+<td>—</td>
+<td>Retain cards at end of turn</td>
+<td>Retain discard enablers until you find Sly cards (or vice versa) — removes the archetype&#39;s only variance</td>
+</tr>
+<tr>
+<td>Haze</td>
+<td>—</td>
+<td>Applies Poison (10; upgraded 21) — and it&#39;s a Sly card</td>
+<td>The best Sly payoff: it &quot;kills very quickly if you can play it two or three times&quot;</td>
+</tr>
+<tr>
+<td>Flick Flack</td>
+<td>—</td>
+<td>Damage to all enemies, and a Sly card</td>
+<td>Effectively free with any discard; the video likes it even more than Ricochet overall</td>
+</tr>
+<tr>
+<td>Ricochet</td>
+<td>—</td>
+<td>Attack, and a Sly card</td>
+<td>Very strong with Shuriken (Strength); excellent against bosses; Ricochet + Envenom approximates Haze</td>
+</tr>
+</tbody></table>
+<p><strong>Relics:</strong> Ring of the Snake (the extra turn-one draw feeds Backstab and the whole discard plan) and Shuriken, whose Strength makes free Ricochet plays snowball.</p>
+<p><strong>How to pilot it:</strong> Tactician (Energy when discarded) still works — upgraded especially — but is no longer necessary: discarding a Sly card and getting the play for free is worth as much as the Energy. Momentum Mori is fine through early Act 2, after which free Sly plays beat spending Energy. For the kill itself, &quot;you kind of just kill with whatever&quot; — Corrosive Wave, the Sly payoffs, plus After Image and Serpent Form as extra win conditions.</p>
+<p><strong>Strengths and weaknesses:</strong> the strongest plan on arguably the current best character; the only real failure mode is lacking discard enablers early — Haze in particular is a bad card in Act 1 without them.</p>
+<h2>Related</h2>
+<ul>
+<li><a href="/builds/builds-silent">Silent build hub</a> — 全部套路总览</li>
+<li><a href="/builds/builds-overview">Builds Overview</a></li>
+<li><a href="/cards/silent">Silent card table</a></li>
+<li><a href="/cards/tier-list">Card Tier List</a></li>
+</ul>
+f:["$","div",null,{"className":"flex flex-1","children":["$","main",null,{"className":"flex-1 p-6 lg:p-8","children":[["$","nav",null,{"className":"flex flex-wrap items-center gap-2 text-xs text-muted-foreground","children":[["$","$L2",null,{"href":"/","className":"transition hover:text-foreground","children":"Home"}],[["$","span","0",{"className":"flex items-center gap-2","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-right h-3 w-3","children":[["$","path","mthhwq",{"d":"m9 18 6-6-6-6"}],"$undefined"]}],["$","$L2",null,{"href":"/builds","className":"transition hover:text-foreground","children":"Builds"}]]}],["$","span","1",{"className":"flex items-center gap-2","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-right h-3 w-3","children":[["$","path","mthhwq",{"d":"m9 18 6-6-6-6"}],"$undefined"]}],["$","span",null,{"className":"text-foreground","children":"Sly Build — Slay the Spire 2 Build Guide"}]]}]]]}],["$","article",null,{"className":"mt-6","children":[["$","h1",null,{"className":"text-3xl font-bold text-foreground sm:text-4xl","children":"Sly Build — Slay the Spire 2 Build Guide"}],["$","p",null,{"className":"mt-3 max-w-2xl text-muted-foreground","children":"The Sly Discard Engine build for the Silent in Slay the Spire 2: core cards, relics and step-by-step strategy."}],["$","div",null,{"className":"prose prose-neutral dark:prose-invert mt-8 max-w-none","dangerouslySetInnerHTML":{"__html":"$19"}}]]}],"$L1a"]}]}]
+1a:["$","section",null,{"className":"mt-12 border-t pt-8","children":[["$","h2",null,{"className":"mb-4 text-lg font-semibold text-foreground","children":"Related Guides"}],["$","div",null,{"className":"space-y-2","children":[["$","$L2","/builds/defect-claw-build",{"href":"/builds/defect-claw-build","className":"flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-right h-3 w-3","children":[["$","path","mthhwq",{"d":"m9 18 6-6-6-6"}],"$undefined"]}],"Claw Build — Slay the Spire 2 Build Guide"]}],["$","$L2","/builds/defect-dark-build",{"href":"/builds/defect-dark-build","className":"flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-right h-3 w-3","children":[["$","path","mthhwq",{"d":"m9 18 6-6-6-6"}],"$undefined"]}],"Dark Build — Slay the Spire 2 Build Guide"]}],["$","$L2","/builds/builds-defect",{"href":"/builds/builds-defect","className":"flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-right h-3 w-3","children":[["$","path","mthhwq",{"d":"m9 18 6-6-6-6"}],"$undefined"]}],"Defect Builds — Slay the Spire 2 Guide"]}],["$","$L2","/builds/ironclad-dominate-build",{"href":"/builds/ironclad-dominate-build","className":"flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-right h-3 w-3","children":[["$","path","mthhwq",{"d":"m9 18 6-6-6-6"}],"$undefined"]}],"Dominate Build — Slay the Spire 2 Build Guide"]}],["$","$L2","/builds/ironclad-exhaust-build",{"href":"/builds/ironclad-exhaust-build","className":"flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-right h-3 w-3","children":[["$","path","mthhwq",{"d":"m9 18 6-6-6-6"}],"$undefined"]}],"Exhaust Build — Slay the Spire 2 Build Guide"]}],["$","$L2","/builds/regent-forge-build",{"href":"/builds/regent-forge-build","className":"flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-right h-3 w-3","children":[["$","path","mthhwq",{"d":"m9 18 6-6-6-6"}],"$undefined"]}],"Forge Build — Slay the Spire 2 Build Guide"]}],["$","$L2","/builds/defect-frost-build",{"href":"/builds/defect-frost-build","className":"flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-right h-3 w-3","children":[["$","path","mthhwq",{"d":"m9 18 6-6-6-6"}],"$undefined"]}],"Frost Build — Slay the Spire 2 Build Guide"]}],["$","$L2","/builds/regent-infinites-build",{"href":"/builds/regent-infinites-build","className":"flex items-center gap-2 text-sm text-muted-foreground transition hover:text-foreground","children":["$L1b","Infinites Build — Slay the Spire 2 Build Guide"]}]]}]]}]
+1b:["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-chevron-right h-3 w-3","children":[["$","path","mthhwq",{"d":"m9 18 6-6-6-6"}],"$undefined"]}]
+15:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+11:null
+1c:I[622,[],"IconMark"]
+13:{"metadata":[["$","title","0",{"children":"Slay the Spire 2 Wiki — Builds • Tier Lists • Bosses • Patch Tracker"}],["$","meta","1",{"name":"description","content":"A fan-made Slay the Spire 2 wiki: release date, platforms, price, builds & tier lists, builds, tier lists, boss guides and patch tracking — all backed by verified sources."}],["$","link","2",{"rel":"manifest","href":"/site.webmanifest","crossOrigin":"$undefined"}],["$","link","3",{"rel":"icon","href":"/favicon.ico"}],["$","$L1c","4",{}]],"error":null,"digest":"$undefined"}
+18:"$13:metadata"

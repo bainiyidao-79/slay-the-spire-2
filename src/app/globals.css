@@ -11,23 +11,23 @@
  */
 @theme {
   /* 深色基底 */
-  --color-background: #0a0a0c;
-  --color-foreground: #fafafa;
-  --color-card: #131316;
-  --color-card-foreground: #fafafa;
-  --color-muted: #1a1a1f;
-  --color-muted-foreground: #a1a1aa;
-  --color-border: #26262b;
-  --color-ring: #52525b;
+  --color-background: #0c0a07;
+  --color-foreground: #faf6ec;
+  --color-card: #171208;
+  --color-card-foreground: #faf6ec;
+  --color-muted: #211a0e;
+  --color-muted-foreground: #b8a88a;
+  --color-border: #33291a;
+  --color-ring: #a8863d;
 
   /* 主色（按钮/链接/高亮）+ 光晕色（页面顶部氛围） */
-  --color-primary: #10b981;
-  --color-primary-foreground: #05201a;
-  --color-glow: #10b981;
+  --color-primary: #ffc800;
+  --color-primary-foreground: #1a1200;
+  --color-glow: #ffc800;
 
   /* 强调色（徽章/标签/装饰） */
-  --color-accent: #60a5fa;
-  --color-accent-foreground: #0b1020;
+  --color-accent: #00bfff;
+  --color-accent-foreground: #00131f;
 
   --radius: 0.625rem;
 }
@@ -171,7 +171,7 @@
 }
 .prose pre {
   background: #16161a;
-  color: #fafafa;
+  color: #faf6ec;
   border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 1rem;
@@ -197,3 +197,84 @@
   margin: 1.25rem 0;
   border-radius: 8px;
 }
+
+/* ===== S8 排版规范（扬哥 2026-09-10）：行距/占位图/层级 ===== */
+main { line-height: 1.85; }
+main h2 { margin-top: 2.2rem; }
+main p { margin-block: 0.9rem; }
+.card-art-ph { display: flex; align-items: center; justify-content: center; aspect-ratio: 5 / 3; border: 1px dashed var(--color-border); border-radius: var(--radius); background: var(--color-muted); color: var(--color-muted-foreground); font-size: .85rem; letter-spacing: .06em; }
+
+/* ===== S8 组件库 v2（扬哥批准样板 2026-09-11 00:01）：PPT 组件式对象页 ===== */
+/* 头部面板：暗红渐变 */
+.wiki-hero{position:relative;background:linear-gradient(135deg,#2a2028,var(--color-card) 60%);border:1px solid var(--color-border);border-radius:14px;padding:22px 24px;margin-bottom:18px}
+.wiki-hero .hrow{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+/* 图/头像占位符（图文混排：浮动+环绕，禁止整行占满） */
+.art-ph{flex:none;display:flex;align-items:center;justify-content:center;text-align:center;border:1px dashed #5a6a85;border-radius:10px;background:linear-gradient(145deg,#2b3648,#232d3d);color:#7f93b0;font-size:11px;letter-spacing:.08em;line-height:1.5}
+.art-150{width:150px;height:96px}.art-220{width:220px;height:140px}.art-round{width:92px;height:92px;border-radius:50%}
+.pf-right{float:right;width:240px;height:300px;margin:0 0 14px 20px}
+.pf-left{float:left;width:200px;height:130px;margin:4px 18px 12px 0}
+/* 徽章 */
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:.04em;line-height:1.5}
+.badge-tier{background:#c0392b;color:#fff}.badge-gold{background:var(--color-primary);color:#302500}.badge-blue{background:#3d7dd8;color:#fff}.badge-gray{background:#3a4658;color:var(--color-foreground)}.badge-green{background:#27ae60;color:#fff}.badge-purple{background:#8e5bb8;color:#fff}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+/* 数据格 */
+.st-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.st-grid.c5{grid-template-columns:repeat(5,1fr)}
+.st{background:var(--color-muted);border:1px solid var(--color-border);border-radius:10px;text-align:center;padding:12px 8px}
+.st b{display:block;font-size:19px;color:var(--color-primary)}
+.st i{font-style:normal;font-size:10.5px;color:var(--color-muted-foreground);letter-spacing:.1em;text-transform:uppercase}
+/* 效果盒 */
+.eff{background:var(--color-muted);border-left:3px solid var(--color-primary);border-radius:8px;padding:12px 16px;margin:12px 0}
+.eff .eff-label{display:block;font-size:11px;letter-spacing:.12em;color:var(--color-muted-foreground);margin-bottom:3px}
+/* tile 卡 / entry 条目 */
+.tile{display:block;background:var(--color-muted);border:1px solid var(--color-border);border-radius:12px;padding:12px;text-align:center;transition:border-color .15s}
+.tile:hover{border-color:var(--color-primary)}
+.tile .timg{height:64px;border-radius:8px;border:1px dashed #5a6a85;background:linear-gradient(145deg,#2b3648,#232d3d);color:#7f93b0;font-size:9.5px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;letter-spacing:.06em}
+.tile b{font-size:13.5px;display:block}
+.tile i{font-style:normal;font-size:11px;color:var(--color-muted-foreground)}
+.tile-inline{display:flex;gap:8px;align-items:center;text-align:left}
+.tile-inline .timg{width:46px;height:46px;flex:none;margin:0 8px 0 0}
+.entry{display:flex;gap:14px;align-items:center;background:var(--color-muted);border:1px solid var(--color-border);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+/* pills / chips / 档位行 */
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.pill{font-size:12px;background:var(--color-muted);border:1px solid var(--color-border);padding:4px 12px;border-radius:999px}
+.chip{font-size:12.5px;background:var(--color-muted);border:1px solid var(--color-border);border-radius:7px;padding:5px 10px;display:inline-block}
+.trow{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.trow .trow-label{flex:none;width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff}
+.trow .trow-cell{display:flex;gap:8px;flex-wrap:wrap}
+/* 步骤 / 事件选项 / 时间线 */
+.step{display:flex;gap:14px;margin-bottom:10px}
+.step .step-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--color-primary);color:#2e2500;font-weight:900;display:flex;align-items:center;justify-content:center}
+.step p{color:var(--color-muted-foreground);font-size:14px}
+.opt{border:1px solid var(--color-border);background:var(--color-muted);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.opt b{color:var(--color-primary)}
+.tl{position:relative;padding-left:22px}
+.tl::before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:var(--color-border)}
+.tl-item{position:relative;display:block;margin-bottom:12px}
+.tl-item::before{content:"";position:absolute;left:-21px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--color-primary)}
+.tl-item b{display:block}
+.tl-item span{color:var(--color-muted-foreground);font-size:13px}
+/* FAQ（原生 details 折叠） */
+.faq{border:1px solid var(--color-border);border-radius:10px;background:var(--color-card);margin-bottom:10px;overflow:hidden}
+.faq summary{padding:12px 16px;font-size:14.5px;cursor:pointer;font-weight:700;list-style:none}
+.faq summary::before{content:"＋ ";color:var(--color-primary)}
+.faq[open] summary::before{content:"－ "}
+.faq .faq-a{padding:0 16px 12px;font-size:13.5px;color:var(--color-muted-foreground)}
+/* 布局：主+侧栏 / 网格 */
+.cols{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:900px){.cols{grid-template-columns:1fr}.st-grid,.st-grid.c5{grid-template-columns:repeat(2,1fr)}.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+/* 收藏按钮（金色醒目，标题行右侧） */
+.fav-btn{display:inline-flex;align-items:center;gap:6px;background:var(--color-primary);color:#2e2500;font-weight:800;font-size:14px;padding:9px 16px;border-radius:999px;border:0;cursor:pointer;white-space:nowrap;box-shadow:0 4px 14px color-mix(in oklab,var(--color-primary) 28%,transparent)}
+.fav-btn:hover{filter:brightness(1.06)}
+.fav-btn.mini{padding:6px 12px;font-size:12.5px;box-shadow:none}
+/* 栏目标题（金色 sec） */
+.sec{font-size:17px;margin:20px 0 12px;color:var(--color-primary);letter-spacing:.02em;font-weight:700}
+/* 侧栏卡 + 键值行 + 副标题（样板 v2 补遗） */
+.side-card{background:var(--color-card);border:1px solid var(--color-border);border-radius:12px;padding:16px 18px;margin-bottom:16px}
+.side-card h4{font-size:15px;margin-bottom:10px}
+.kv{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:5px 0;border-bottom:1px dashed var(--color-border)}
+.kv:last-child{border-bottom:none}
+.kv b{color:var(--color-muted-foreground);font-weight:600}
+.wiki-sub{color:var(--color-muted-foreground);font-size:14.5px}
