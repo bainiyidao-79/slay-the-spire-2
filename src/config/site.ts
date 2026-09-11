@@ -87,6 +87,20 @@ export const siteConfig: SiteConfig = {
   youtubeChannelUrl: "https://www.youtube.com/channel/UCEFMIvLMz1cwKhB9GD_hAWw",
   keywords: ["slay the spire 2", "slay the spire 2 wiki", "slay the spire 2 builds", "slay the spire 2 tier list", "slay the spire 2 release date"],
 
+  // Adsterra Banner 160×600（扬哥 2026-09-11 创建，unit Active）：左右浮动 sticky 竖幅
+  ads: {
+    sideRail: `<script>
+  atOptions = {
+    'key' : '28fe93536da4fff820bb1da756c096c2',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highrevenueformat.com/28fe93536da4fff820bb1da756c096c2/invoke.js"></script>`,
+  },
+
   // ⚠️ 导航由 gen_nav.py 按 菜单-页面清单.json 自动生成（v2, 2026-09-10）——勿手改，重新生成后整段替换
   // ⚠️ v3 树状导航（内容框架2.0 全量：6+3+22+4+1+5 = 41 条，手工登记）
   nav: [
