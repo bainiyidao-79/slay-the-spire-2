@@ -1,0 +1,56 @@
+---
+title: "Slay the Spire 2 Save Editing — Console Exports and current.save Tweaks"
+description: "Edit Slay the Spire 2 saves two ways: export the save folder from the BaseMod console, or open current.save in a text editor and tweak currentHP, maxHP, deck, gold and relicbag directly."
+date: "2026-03-25"
+updated: "2026-09-19"
+category: "Tech"
+keywords: ["Slay the Spire 2 save editing", "current.save", "edit save file", "save location", "save backup"]
+readTime: "5 min read"
+---
+
+There are two ways to bend Slay the Spire 2's numbers: the in-game console (quick, per-fight commands) and direct **save-file editing** (precise, persistent changes to HP, deck, gold and relics). Both start from the same prerequisite — the [mod loader](/tech/console-commands) — and both absolutely require a backup first.
+
+<div class="art-ph lead"><img src="/images/sts2-slide-combat.webp" loading="eager" alt="Slay the Spire 2 in combat"><figcaption>The save file is a text file. Act accordingly — and back it up.</figcaption></div>
+
+## Route 1: console commands (quick edits)
+
+With [ModTheSpire + BaseMod](/tech/console-commands) installed, press **~** in game and use:
+
+- `gold 9999` — set gold
+- `maxhp 9999` — set maximum HP
+- `energy 999` — set current energy
+- `relic [relic ID]` — add a relic
+- `card [card ID]` — add a card
+- `win` — instantly win the current fight
+
+These apply immediately in the run, no file editing needed.
+
+## Route 2: edit current.save directly
+
+1. **Export the save directory:** in the console, press Tab, choose **get logs**, press Enter — the save folder opens.
+2. **Find the file:** the path ends in your Steam player ID → `saves` → **current.save**.
+3. **Open it in a text editor** (Notepad works; it's plain text) and edit the keys you want:
+
+| Key | Controls |
+| --- | --- |
+| `currentHP` | Current health |
+| `maxHP` | Maximum health |
+| `deck` | Card list — replace card IDs inside the braces |
+| `gold` | Gold amount |
+| `maxEnergy` | Base energy per turn |
+| `flaskCount` | Potion slots |
+| `relicbag` | Relic list — copy the brace format, swap relic IDs |
+
+4. **Save (Ctrl+S)** and restart the game — the edits load with the save.
+
+## Rules that keep saves alive
+
+- **Backup before every edit session.** Copy the whole save folder somewhere safe; a malformed brace in `deck` bricks the run.
+- **IDs are English strings** — copy the exact format of neighboring entries rather than typing a guess.
+- **Co-op edits are host-only:** the host's save is the shared one; each player's own data edits only themselves. See [multiplayer setup](/basics/how-to-join-multiplayer) for who owns which save.
+
+**Keep reading:**
+
+- [Console Commands](/tech/console-commands)
+- [Save File Location](/tech/save-file-location)
+- [How to Install Mods](/tech/how-to-install-mods)

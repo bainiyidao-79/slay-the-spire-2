@@ -2,34 +2,50 @@
 
 /*
  * ============================================================
- * THEME TOKENS — 配色方案注入点（扬哥确立的建站方法论）
+ * THEME TOKENS — 配色方案注入点
  *
  * 骨架不定死配色。选骨架装素材时，先取游戏官方美术（官网/Steam
- * 头图/宣传图），用视觉模型提取配色，再覆盖下面的变量。
- * 默认值 = 中性深色游戏风（参考 vvultimatum.net 源站）。
+ * 头图/宣传图），用视觉模型提取配色，再覆盖下面【三个主槽位】。
+ *
+ * 规则（本骨架硬约束）：
+ *   1. 组件里禁止写死色值，一律走下面的 token（bg-card / text-muted-foreground ...）。
+ *   2. 派生槽位（背景/卡片/边框/正文…）只能由三个主槽位 color-mix 得出，
+ *      改主槽位 = 全站换皮；禁止单独写死派生槽位。
+ *   3. 默认值 = 深色底 + 橙红强调（与配套风格包 游侠style 一致）。
  * ============================================================
  */
 @theme {
-  /* 深色基底 */
-  --color-background: #0c0a07;
-  --color-foreground: #faf6ec;
-  --color-card: #171208;
-  --color-card-foreground: #faf6ec;
-  --color-muted: #211a0e;
-  --color-muted-foreground: #b8a88a;
-  --color-border: #33291a;
-  --color-ring: #a8863d;
+  /* ---- 三个主槽位（每站由 g-art-design 覆盖；唯一需要改的三行）---- */
+  --color-primary: #ff3c02; /* 主色：按钮/高亮/分隔线 */
+  --color-accent: #ff6a00; /* 强调色：徽标/次级装饰 */
+  --color-auxiliary: #c1b597; /* 辅助色：正文亮色/次级文字倾向 */
 
-  /* 主色（按钮/链接/高亮）+ 光晕色（页面顶部氛围） */
-  --color-primary: #ffc800;
-  --color-primary-foreground: #1a1200;
-  --color-glow: #ffc800;
+  /* ---- 派生槽位（只允许 mix 上面三行，禁止写死）---- */
+  --color-background: color-mix(in oklab, var(--color-primary) 3%, #0e0e10);
+  --color-foreground: color-mix(in oklab, var(--color-auxiliary) 14%, #f7f7f7);
+  --color-card: color-mix(in oklab, var(--color-primary) 4%, #131316);
+  --color-card-foreground: var(--color-foreground);
+  --color-muted: color-mix(in oklab, var(--color-auxiliary) 7%, #1a1a1f);
+  --color-muted-foreground: color-mix(in oklab, var(--color-auxiliary) 40%, #949494);
+  --color-border: color-mix(in oklab, var(--color-primary) 12%, #26262b);
+  --color-ring: color-mix(in oklab, var(--color-primary) 45%, #4a4a50);
+  --color-primary-foreground: #ffffff;
+  --color-accent-foreground: #1a0d05;
 
-  /* 强调色（徽章/标签/装饰） */
-  --color-accent: #00bfff;
-  --color-accent-foreground: #00131f;
+  /* 玻璃面板（原站 rgba(19,19,19,.8) + blur） */
+  --color-glass: rgba(19, 19, 19, 0.8);
+  /* 面板底色（原站主板块 rgba(0,0,0,.88)） */
+  --color-panel: rgba(0, 0, 0, 0.88);
+  /* 橙色 1px 分隔线（原站 M3Line rgba(255,60,0,.36)） */
+  --color-line-accent: color-mix(in oklab, var(--color-primary) 36%, transparent);
+  /* 小方按钮 hover 描边 */
+  --color-btn-hover: #ffffff;
+  /* 「更多」展开文字（原站 #d96d6d） */
+  --color-more: color-mix(in oklab, var(--color-primary) 62%, #ffffff);
+  /* 视频/轮播封面底部压暗遮罩 */
+  --color-scrim: rgba(0, 0, 0, 0.59);
 
-  --radius: 0.625rem;
+  --radius: 0.5rem;
 }
 
 @layer base {
@@ -49,68 +65,174 @@
   }
 }
 
-@layer utilities {
-  /* 顶部光晕：主色 radial 渐变氛围（源站同款手法） */
-  .glow-top {
-    background:
-      radial-gradient(
-        circle at top,
-        color-mix(in oklab, var(--color-glow) 18%, transparent),
-        transparent 48%
-      ),
-      linear-gradient(135deg, rgb(255 255 255 / 0.05), rgb(255 255 255 / 0));
+/* ============================================================
+ * 组件类（骨架自带，禁止单站私改：改样式走骨架版本迭代）
+ * ============================================================ */
+@layer components {
+  /* 内容容器：净宽 1200px（原站 ContentWrap），左右各留 16px 安全边距 */
+  .wrap-1200 {
+    width: 100%;
+    max-width: 1232px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
   }
-  /* CTA 大区块光晕 */
-  .glow-cta {
-    box-shadow: 0 0 120px color-mix(in oklab, var(--color-glow) 22%, transparent);
-  }
-  /* 区块标题下的渐变细线 */
-  .title-line {
-    height: 2px;
-    border: 0;
+
+  /* 信息卡标题下的装饰线（原站 270×6 线图） */
+  .title-rule {
+    width: 270px;
+    max-width: 100%;
+    height: 6px;
+    margin: 0 auto;
     background: linear-gradient(
       to right,
-      color-mix(in oklab, var(--color-glow) 70%, transparent),
+      transparent,
+      var(--color-line-accent),
       transparent
     );
   }
-  /* 眉标：小号全大写宽字距（游戏站标配） */
+
+  /* 半透明玻璃面板（信息卡/导航树容器） */
+  .glass {
+    background: var(--color-glass);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* 主板块深底（首页攻略区 / 内容页正文底板） */
+  .panel {
+    background: var(--color-panel);
+  }
+
+  /* 小方按钮（原站 M3ListA li 179×28；hover 白描边 .3s） */
+  .btn-sq {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    padding: 0 8px;
+    font-size: 14px;
+    line-height: 1;
+    color: var(--color-foreground);
+    background: var(--color-muted);
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .btn-sq:hover {
+    border-color: var(--color-btn-hover);
+  }
+
+  /* 栏目分栏线：橙色 1px（原站 M3Line） */
+  .divider-accent {
+    height: 1px;
+    border: 0;
+    background: var(--color-line-accent);
+    margin: 10px 0;
+  }
+
+  /* 栏目标题（原站 M3Title 16px） */
+  .sec-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-foreground);
+    line-height: 1.4;
+  }
+
+  /* 「更多 ▼」展开（原站居中 12px 红字） */
+  .more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--color-more);
+    transition: opacity 0.2s;
+  }
+  .more-link:hover {
+    opacity: 0.8;
+  }
+
+  /* 封面底部压暗遮罩（轮播/视频标题衬底） */
+  .scrim-bottom {
+    background: linear-gradient(
+      to top,
+      var(--color-scrim) 0%,
+      color-mix(in oklab, var(--color-scrim) 60%, transparent) 45%,
+      transparent 100%
+    );
+  }
+
+  /* 轮播分页点：8×8 小方块，当前项横向拉长 14×8（原站） */
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 0;
+    background: color-mix(in oklab, #ffffff 60%, transparent);
+    transition: width 0.3s, background-color 0.3s;
+  }
+  .dot-active {
+    width: 14px;
+    background: #ffffff;
+  }
+
+  /* 眉标：小号全大写宽字距 */
   .eyebrow {
     font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: color-mix(in oklab, var(--color-glow) 65%, white);
+    color: color-mix(in oklab, var(--color-primary) 65%, white);
+  }
+
+  /* 橙色主按钮（原站 96×32 橙底白字；文案用 View on Steam ↗，宽度随文案自适应） */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary-foreground);
+    background: var(--color-primary);
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover {
+    opacity: 0.88;
   }
 }
 
-/* 文章排版样式（深色 prose，替代 @tailwindcss/typography） */
+/* ============================================================
+ * 正文排版（内容页左栏：宽行距 + 分段插图混排）
+ * ============================================================ */
 .prose {
   color: var(--color-foreground);
-  line-height: 1.75;
-  font-size: 1rem;
+  font-size: 1.0625rem;
+  /* 行距 2.0（2026-09-16 扬哥定：1.85 偏挤，有阅读压迫感） */
+  line-height: 2;
 }
 .prose h1 {
-  font-size: 1.875rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  margin: 2rem 0 1rem;
-  line-height: 1.3;
+  margin: 1.5rem 0 1rem;
+  line-height: 1.35;
 }
 .prose h2 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  margin: 2rem 0 0.75rem;
-  line-height: 1.3;
+  margin: 2.6rem 0 1rem;
+  line-height: 1.45;
   padding-bottom: 0.375rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-line-accent);
 }
 .prose h3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   margin: 1.5rem 0 0.5rem;
 }
 .prose p {
-  margin: 1rem 0;
+  /* 段间距 1.4rem（行距 2.0 配套） */
+  margin: 1.4rem 0;
 }
 .prose ul,
 .prose ol {
@@ -124,26 +246,22 @@
   list-style: decimal;
 }
 .prose li {
-  margin: 0.375rem 0;
+  margin: 0.6rem 0;
 }
 .prose a {
-  color: color-mix(in oklab, var(--color-glow) 80%, white);
+  color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 2px;
-}
-.prose a:hover {
-  color: color-mix(in oklab, var(--color-glow) 60%, white);
 }
 .prose strong {
   font-weight: 600;
   color: #ffffff;
 }
 .prose blockquote {
-  border-left: 3px solid var(--color-glow);
+  border-left: 3px solid var(--color-primary);
   padding-left: 1rem;
   margin: 1.25rem 0;
   color: var(--color-muted-foreground);
-  font-style: italic;
 }
 .prose table {
   width: 100%;
@@ -166,115 +284,58 @@
   border-radius: 4px;
   padding: 0.125rem 0.375rem;
   font-size: 0.875em;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   color: var(--color-accent);
 }
-.prose pre {
-  background: #16161a;
-  color: #faf6ec;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  padding: 1rem;
-  overflow-x: auto;
-  margin: 1.25rem 0;
-}
-.prose pre code {
-  background: transparent;
-  padding: 0;
-  color: inherit;
-}
 .prose img {
-  border-radius: 8px;
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 .prose hr {
   border: 0;
   border-top: 1px solid var(--color-border);
   margin: 2rem 0;
 }
-.prose iframe {
-  margin: 1.25rem 0;
-  border-radius: 8px;
+
+/* 分段插图混排：图片浮动一侧、正文环绕（不整行占满）
+ * MDX 用法：<div class="art-ph pf-right"><img src="/images/x.jpg" alt=""></div> */
+.prose .art-ph {
+  float: right;
+  width: 300px;
+  margin: 0.35rem 0 0.9rem 1.25rem;
 }
-
-/* ===== S8 排版规范（扬哥 2026-09-10）：行距/占位图/层级 ===== */
-main { line-height: 1.85; }
-main h2 { margin-top: 2.2rem; }
-main p { margin-block: 0.9rem; }
-.card-art-ph { display: flex; align-items: center; justify-content: center; aspect-ratio: 5 / 3; border: 1px dashed var(--color-border); border-radius: var(--radius); background: var(--color-muted); color: var(--color-muted-foreground); font-size: .85rem; letter-spacing: .06em; }
-
-/* ===== S8 组件库 v2（扬哥批准样板 2026-09-11 00:01）：PPT 组件式对象页 ===== */
-/* 头部面板：暗红渐变 */
-.wiki-hero{position:relative;background:linear-gradient(135deg,#2a2028,var(--color-card) 60%);border:1px solid var(--color-border);border-radius:14px;padding:22px 24px;margin-bottom:18px}
-.wiki-hero .hrow{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
-/* 图/头像占位符（图文混排：浮动+环绕，禁止整行占满） */
-.art-ph{flex:none;display:flex;align-items:center;justify-content:center;text-align:center;border:1px dashed #5a6a85;border-radius:10px;background:linear-gradient(145deg,#2b3648,#232d3d);color:#7f93b0;font-size:11px;letter-spacing:.08em;line-height:1.5}
-.art-150{width:150px;height:96px}.art-220{width:220px;height:140px}.art-round{width:92px;height:92px;border-radius:50%}
-.pf-right{float:right;width:240px;height:300px;margin:0 0 14px 20px}
-.pf-left{float:left;width:200px;height:130px;margin:4px 18px 12px 0}
-/* 徽章 */
-.badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:.04em;line-height:1.5}
-.badge-tier{background:#c0392b;color:#fff}.badge-gold{background:var(--color-primary);color:#302500}.badge-blue{background:#3d7dd8;color:#fff}.badge-gray{background:#3a4658;color:var(--color-foreground)}.badge-green{background:#27ae60;color:#fff}.badge-purple{background:#8e5bb8;color:#fff}
-.badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-/* 数据格 */
-.st-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
-.st-grid.c5{grid-template-columns:repeat(5,1fr)}
-.st{background:var(--color-muted);border:1px solid var(--color-border);border-radius:10px;text-align:center;padding:12px 8px}
-.st b{display:block;font-size:19px;color:var(--color-primary)}
-.st i{font-style:normal;font-size:10.5px;color:var(--color-muted-foreground);letter-spacing:.1em;text-transform:uppercase}
-/* 效果盒 */
-.eff{background:var(--color-muted);border-left:3px solid var(--color-primary);border-radius:8px;padding:12px 16px;margin:12px 0}
-.eff .eff-label{display:block;font-size:11px;letter-spacing:.12em;color:var(--color-muted-foreground);margin-bottom:3px}
-/* tile 卡 / entry 条目 */
-.tile{display:block;background:var(--color-muted);border:1px solid var(--color-border);border-radius:12px;padding:12px;text-align:center;transition:border-color .15s}
-.tile:hover{border-color:var(--color-primary)}
-.tile .timg{height:64px;border-radius:8px;border:1px dashed #5a6a85;background:linear-gradient(145deg,#2b3648,#232d3d);color:#7f93b0;font-size:9.5px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;letter-spacing:.06em}
-.tile b{font-size:13.5px;display:block}
-.tile i{font-style:normal;font-size:11px;color:var(--color-muted-foreground)}
-.tile-inline{display:flex;gap:8px;align-items:center;text-align:left}
-.tile-inline .timg{width:46px;height:46px;flex:none;margin:0 8px 0 0}
-.entry{display:flex;gap:14px;align-items:center;background:var(--color-muted);border:1px solid var(--color-border);border-radius:12px;padding:12px 14px;margin-bottom:10px}
-/* pills / chips / 档位行 */
-.pills{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
-.pill{font-size:12px;background:var(--color-muted);border:1px solid var(--color-border);padding:4px 12px;border-radius:999px}
-.chip{font-size:12.5px;background:var(--color-muted);border:1px solid var(--color-border);border-radius:7px;padding:5px 10px;display:inline-block}
-.trow{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
-.trow .trow-label{flex:none;width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff}
-.trow .trow-cell{display:flex;gap:8px;flex-wrap:wrap}
-/* 步骤 / 事件选项 / 时间线 */
-.step{display:flex;gap:14px;margin-bottom:10px}
-.step .step-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--color-primary);color:#2e2500;font-weight:900;display:flex;align-items:center;justify-content:center}
-.step p{color:var(--color-muted-foreground);font-size:14px}
-.opt{border:1px solid var(--color-border);background:var(--color-muted);border-radius:10px;padding:12px 14px;margin-bottom:10px}
-.opt b{color:var(--color-primary)}
-.tl{position:relative;padding-left:22px}
-.tl::before{content:"";position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:var(--color-border)}
-.tl-item{position:relative;display:block;margin-bottom:12px}
-.tl-item::before{content:"";position:absolute;left:-21px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--color-primary)}
-.tl-item b{display:block}
-.tl-item span{color:var(--color-muted-foreground);font-size:13px}
-/* FAQ（原生 details 折叠） */
-.faq{border:1px solid var(--color-border);border-radius:10px;background:var(--color-card);margin-bottom:10px;overflow:hidden}
-.faq summary{padding:12px 16px;font-size:14.5px;cursor:pointer;font-weight:700;list-style:none}
-.faq summary::before{content:"＋ ";color:var(--color-primary)}
-.faq[open] summary::before{content:"－ "}
-.faq .faq-a{padding:0 16px 12px;font-size:13.5px;color:var(--color-muted-foreground)}
-/* 布局：主+侧栏 / 网格 */
-.cols{display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-@media (max-width:900px){.cols{grid-template-columns:1fr}.st-grid,.st-grid.c5{grid-template-columns:repeat(2,1fr)}.g3,.g4{grid-template-columns:repeat(2,1fr)}}
-/* 收藏按钮（金色醒目，标题行右侧） */
-.fav-btn{display:inline-flex;align-items:center;gap:6px;background:var(--color-primary);color:#2e2500;font-weight:800;font-size:14px;padding:9px 16px;border-radius:999px;border:0;cursor:pointer;white-space:nowrap;box-shadow:0 4px 14px color-mix(in oklab,var(--color-primary) 28%,transparent)}
-.fav-btn:hover{filter:brightness(1.06)}
-.fav-btn.mini{padding:6px 12px;font-size:12.5px;box-shadow:none}
-/* 栏目标题（金色 sec） */
-.sec{font-size:17px;margin:20px 0 12px;color:var(--color-primary);letter-spacing:.02em;font-weight:700}
-/* 侧栏卡 + 键值行 + 副标题（样板 v2 补遗） */
-.side-card{background:var(--color-card);border:1px solid var(--color-border);border-radius:12px;padding:16px 18px;margin-bottom:16px}
-.side-card h4{font-size:15px;margin-bottom:10px}
-.kv{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;padding:5px 0;border-bottom:1px dashed var(--color-border)}
-.kv:last-child{border-bottom:none}
-.kv b{color:var(--color-muted-foreground);font-weight:600}
-.wiki-sub{color:var(--color-muted-foreground);font-size:14.5px}
+/* 首图引导大图（2026-09-16 扬哥定：标题/简介正下方通栏 16:9，进页瞬间可见） */
+.prose .art-ph.lead {
+  float: none;
+  width: 100%;
+  margin: 0 0 1.4rem;
+}
+.prose .art-ph.lead img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.prose .art-ph.pf-left {
+  float: left;
+  margin: 0.35rem 1.25rem 0.9rem 0;
+}
+.prose .art-ph img {
+  display: block;
+  width: 100%;
+}
+.prose .art-ph figcaption {
+  margin-top: 0.375rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--color-muted-foreground);
+}
+@media (max-width: 640px) {
+  .prose .art-ph,
+  .prose .art-ph.pf-left {
+    float: none;
+    width: 100%;
+    margin: 1rem 0;
+  }
+}

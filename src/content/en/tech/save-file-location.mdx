@@ -1,0 +1,45 @@
+---
+title: "Slay the Spire 2 Save File Location — Where Your Profiles Live"
+description: "Slay the Spire 2 saves live in AppData\\Roaming\\SlayTheSpire2\\steam\\<SteamID>, with profile1/2/3 folders for the three save slots. Full path, backup method and file notes."
+date: "2026-03-09"
+updated: "2026-09-19"
+category: "Tech"
+keywords: ["Slay the Spire 2 save location", "save file path", "profile1 profile2 profile3", "backup saves", "current.save"]
+readTime: "3 min read"
+---
+
+Backups, save edits, mod resets — everything starts with knowing where the saves actually live. Slay the Spire 2 keeps them outside the Steam install, in your Windows user profile:
+
+```
+C:\Users\<YourWindowsName>\AppData\Roaming\SlayTheSpire2\steam\<YourSteamID>\
+```
+
+`<YourSteamID>` is the 17-digit account number attached to your Steam login.
+
+<div class="art-ph lead"><img src="/images/sts2-slide-combat.webp" loading="eager" alt="Slay the Spire 2 run in progress"><figcaption>Three save slots, one folder, and a backup you should make right now.</figcaption></div>
+
+## The three profile folders
+
+Inside the SteamID folder, your saves live in **profile1**, **profile2** and **profile3** — one folder per save slot in the game's menu. The run data inside is the plain-text **current.save** file, which is exactly why the community loves this game's saves: open it in Notepad and the values are readable (see [save editing](/tech/save-file-editing)).
+
+## How to find it fast (no typing)
+
+1. Press **Win + R**, type `%appdata%\SlayTheSpire2\steam` and press Enter.
+2. Open the folder matching your 17-digit Steam ID.
+3. Your profiles are right there.
+
+## The 30-second backup ritual
+
+Do this before installing [mods](/tech/how-to-install-mods), running console commands, or hand-editing saves:
+
+1. Close the game.
+2. Copy the whole SteamID folder (all three profiles) to another drive or cloud storage.
+3. Date the copy — `profile-backup-2026-09-19` — so you know which save is which.
+
+Restoring is the same operation in reverse: close the game, paste the old folder back, launch. Steam Cloud may also hold copies, but a local backup is the version you control — cloud sync can happily upload a corrupted run right over your good one.
+
+**Keep reading:**
+
+- [Save File Editing](/tech/save-file-editing)
+- [How to Install Mods](/tech/how-to-install-mods)
+- [Console Commands](/tech/console-commands)

@@ -1,0 +1,41 @@
+---
+title: "Slay the Spire 2 Stutter and Performance Fixes — Smooth Out the Frame Pacing"
+description: "Fix Slay the Spire 2 stutter: exclusive fullscreen, VSync off with a framerate cap, lower shadows and particles, close background apps, clear shader caches, and cap your orb slots."
+date: "2026-03-25"
+updated: "2026-09-19"
+category: "Tech"
+keywords: ["Slay the Spire 2 stutter", "performance fix", "frame drops", "VSync", "orb slots lag", "optimization"]
+readTime: "5 min read"
+---
+
+A card game stuttering feels absurd until it happens mid-combo. The Defect's late-game frames are the usual victim — dozens of orbs, full particle bloom, and a GPU that suddenly remembers it has other customers. Here is the fix ladder, in-game settings first.
+
+<div class="art-ph lead"><img src="/images/sts2-char-defect.webp" loading="eager" alt="The Defect surrounded by orbs in Slay the Spire 2"><figcaption>Every orb is pretty. Every orb is also math.</figcaption></div>
+
+## In-game settings (the fixes that actually bite)
+
+- **Display mode: exclusive fullscreen.** Borderless window looks nice and stutters subtly — Windows' window manager force-syncs it.
+- **VSync off; cap the framerate instead.** Use the driver's fast-sync/enhanced-sync if tearing bothers you, and set the cap to your monitor's refresh (60/144). Uncapped framerates cause hot GPUs and uneven frame pacing — the literal definition of stutter.
+- **Trim the expensive toggles:** resolution first, then shadows, anti-aliasing and particle effects; kill motion blur and depth of field outright. Low-spec machines should spend their budget on resolution alone.
+- **Close the Steam overlay:** right-click the game → Properties → untick the Steam interface.
+
+## System side
+
+- **Kill background processes** (Ctrl+Shift+Esc): browsers, launchers, download tools, RGB software — anything eating CPU while you play.
+- **Update GPU drivers** — clean install, then reboot.
+- **Power plan:** Windows set to High Performance; laptops on AC power, always.
+- **Clear caches:** Steam → Settings → Downloads → turn off shader pre-caching and clear the download cache; delete the game's local ShaderCache folder and let it rebuild.
+
+## The orb-slot secret
+
+One in-game cause is easy to miss: **orb slots themselves cost performance.** Every slot's passive re-evaluates each turn, and evokes pile particle work. Lightning/Frost racks of **5–6 slots** and Dark/Plasma racks of **3–4** run identically in gameplay terms to oversized racks — but visibly smoother. Deck-draft-wise, extra Capacitors are worth less than players assume; see the [Focus and Lightning build](/builds/defect-focus-lightning) for what to draft instead.
+
+## Still hitching?
+
+Verify game files (a corrupted shader cache stutters forever), and on multi-monitor setups run the game alone on the primary display. If the hitching started immediately after a driver update, roll the driver back — new drivers occasionally ship with the exact regression you're feeling.
+
+**Keep reading:**
+
+- [Won't Launch — Crashes and Black Screens](/tech/wont-launch-fixes)
+- [Multiplayer Disconnect Fixes](/tech/multiplayer-disconnect-fixes)
+- [System Requirements](/basics/system-requirements)

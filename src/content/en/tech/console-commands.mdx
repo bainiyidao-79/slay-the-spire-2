@@ -1,0 +1,55 @@
+---
+title: "Slay the Spire 2 Console — How to Enable Commands with ModTheSpire"
+description: "Enable the Slay the Spire 2 console with ModTheSpire and BaseMod from Steam Workshop, open it with the tilde key, and use help, heal, gold, relic and card commands."
+date: "2026-03-09"
+updated: "2026-09-19"
+category: "Tech"
+keywords: ["Slay the Spire 2 console", "console commands", "ModTheSpire", "BaseMod", "unlockall", "developer console"]
+readTime: "5 min read"
+---
+
+Slay the Spire 2 doesn't ship with a console toggle — the community solution is **ModTheSpire** plus **BaseMod**, two Workshop mods that add a mod loader and, with it, a full developer console on the tilde key. Here is the complete setup.
+
+<div class="art-ph lead"><img src="/images/sts2-ironclad-combat.webp" loading="eager" alt="Slay the Spire 2 combat"><figcaption>Heal, gold, relics, win — the tilde key does chores.</figcaption></div>
+
+## Step 1: install the loader mods
+
+1. Open Steam → the game's **Steam Workshop** page.
+2. Subscribe to **ModTheSpire** and **BaseMod**; let both download.
+3. Open the game's local folder: Steam → right-click the game → **Manage → Browse local files**.
+4. Navigate to `steamapps/workshop/content/646570` (the game's Workshop ID) and copy **ModTheSpire.jar** into the game's root folder.
+5. Delete the existing `mts-launcher.jar` in the root folder, and rename your copied **ModTheSpire.jar** to `mts-launcher.jar`.
+6. Back in the Workshop folder, copy **BaseMod.jar** into a `mods` folder inside the game directory — create the folder if it doesn't exist.
+
+## Step 2: launch with mods and open the console
+
+1. Launch the game and choose **Play with Mods**.
+2. In the main menu → **Mods**, check **BaseMod**, then press Play.
+3. In game, press the **~ (tilde)** key — under Escape on most keyboards — to open the console.
+4. Type `help` to list commands; **Tab** autocompletes.
+
+## Commands worth knowing
+
+| Command | Effect |
+| --- | --- |
+| `heal` | Restore full HP |
+| `maxhp [number]` | Set maximum HP |
+| `energy [number]` | Set current energy |
+| `gold [number]` | Set gold |
+| `relic [relic ID]` | Add a specific relic |
+| `card [card ID]` | Add a specific card |
+| `unlockall` | Unlock all characters, cards, relics and modes |
+| `win` | Win the current fight instantly |
+
+Card and relic IDs are English strings from the game files. For editing values outside a fight, see our [save-file editing guide](/tech/save-file-editing) — the same console can export your save directory.
+
+## Two warnings before you experiment
+
+- **Back up your saves first** (see [save file location](/tech/save-file-location)); a mistyped command or a bad mod combination can corrupt a run.
+- **Mods and consoles are offline tools** — don't bring a modded build into [co-op](/basics/how-to-join-multiplayer); sync breaks and lobbies desync.
+
+**Keep reading:**
+
+- [Save File Editing](/tech/save-file-editing)
+- [How to Install Mods](/tech/how-to-install-mods)
+- [Save File Location](/tech/save-file-location)

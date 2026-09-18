@@ -1,0 +1,44 @@
+---
+title: "Slay the Spire 2 Multiplayer Disconnects — Why You Keep Losing the Host"
+description: "Frequent Slay the Spire 2 multiplayer disconnects usually mean Steam server load, not your setup. Off-peak play, wired networks, firewall checks and the LAN-mod workaround explained."
+date: "2026-03-25"
+updated: "2026-09-19"
+category: "Tech"
+keywords: ["Slay the Spire 2 multiplayer disconnect", "lost connection to host", "co-op lag", "server load", "LAN mod"]
+readTime: "4 min read"
+---
+
+Getting dumped from co-op runs every twenty minutes is the most reported multiplayer issue in Early Access — and the cause is usually the least satisfying answer in tech support: **Steam's servers are overloaded**. The game's population spikes regularly, and relay stability suffers at peak hours. Here is what actually helps, and what to rule out first.
+
+<div class="art-ph lead"><img src="/images/sts2-slide-combat.webp" loading="eager" alt="Slay the Spire 2 co-op combat"><figcaption>Four climbers, one host, and a relay server having a busy night.</figcaption></div>
+
+## First: rule out your own network
+
+Before blaming the servers, clear the local suspects:
+
+- **Go wired.** Wi-Fi (especially 2.4 GHz) is the top cause of "random" disconnects that only look like server problems.
+- **Reboot the router** — a stale NAT table drops long-lived game sessions.
+- **Close bandwidth hogs:** streaming, downloads and cloud sync on anyone's machine in the house.
+- **Check the host first.** If the *host's* connection hiccups, the whole lobby dissolves — the host needs the stable line, not the guests. See [how hosting works](/basics/how-to-join-multiplayer).
+
+## The server-load reality
+
+At peak hours the relay infrastructure genuinely drops parties. The signatures: disconnects cluster in evening peaks, everyone in the lobby drops at once rather than one player stuttering out, and retrying immediately fails the same way. The fixes are unglamorous:
+
+- **Play off-peak.** Moving the session a few hours (or to a weekend morning) dodges most relay congestion.
+- **Retry the lobby.** A fresh host migration often lands on a healthier relay.
+- **Wait for the patch.** Server capacity has been a recurring item in patch notes; peak-hour stability improves in waves.
+
+## The advanced workaround: LAN-style play
+
+Groups who need stable long sessions sometimes route the game through a **LAN multiplayer mod** plus a tunneling tool (the kind used to play LAN-only games over the internet). It works — direct connections skip the crowded relays entirely — but setup is genuinely technical, and every player needs the same mod set. Only worth it for regular four-player groups who keep losing Sunday nights to the servers.
+
+## If single-player also disconnects
+
+Cloud-save sync errors and login loops are a different beast — check Steam's service status, verify game files, and see the [launch fixes](/tech/wont-launch-fixes). But when the game itself runs fine and only co-op drops: it's the servers, and the spire will still be there in the morning.
+
+**Keep reading:**
+
+- [How to Join Multiplayer](/basics/how-to-join-multiplayer)
+- [Stutter and Performance Fixes](/tech/stutter-fix)
+- [System Requirements](/basics/system-requirements)

@@ -1,0 +1,52 @@
+---
+title: "Slay the Spire 2 Stuck on the Steam Launch Screen — Three-Step Fix"
+description: "Stuck on the Slay the Spire 2 launch screen? Disable Steam shader pre-caching, force a different rendering driver in launch options, and verify game files. Overlay and Sentry cleanup inside."
+date: "2026-03-25"
+updated: "2026-09-19"
+category: "Tech"
+keywords: ["Slay the Spire 2 stuck loading", "launch screen freeze", "shader pre-caching", "rendering driver", "launch fix"]
+readTime: "4 min read"
+---
+
+The infinite launch screen — Steam says "Running," the game shows a logo, and nothing else ever happens — has three known killers, in order of success rate. Work top to bottom.
+
+<div class="art-ph lead"><img src="/images/sts2-hero-keyart.webp" loading="eager" alt="Slay the Spire 2 key art"><figcaption>Step one fixes it more often than everything else combined.</figcaption></div>
+
+## Step 1: disable Steam shader pre-caching (highest success)
+
+1. Steam → **Settings → Downloads**.
+2. Uncheck **Enable Shader Pre-Caching**.
+3. Restart Steam, then launch the game.
+
+Pre-caching compiles shaders at startup; when its cache conflicts with a driver update, the launch sequence stalls exactly where you're stuck.
+
+## Step 2: switch the rendering driver
+
+Steam → right-click the game → **Properties → General → Launch Options**, and add one of (test one at a time, keep the winner):
+
+- `--rendering-driver opengl3` (try this first)
+- `--rendering-driver vulkan`
+
+Vulkan/OpenGL conflicts after GPU driver updates are the second-most-common cause of a frozen launch. If the game opens windowed-small or flickering, append `-windowed`.
+
+## Step 3: verify game files
+
+Right-click the game → **Properties → Installed Files → Verify integrity of game files**. Let the scan finish completely before launching again.
+
+## Also worth doing
+
+- **Close the Steam in-game overlay:** Properties → General → uncheck the overlay.
+- **Exit background interferers:** Discord overlay, GeForce Experience, recorders, antivirus scans — anything that injects into processes.
+- **Run as administrator:** right-click the game exe → Compatibility → administrator.
+- **Delete the Sentry file:** in the install folder, remove `libsentry.windows.release.x86_64`, then restart Steam.
+- **Update your GPU drivers** if none of the above moved the needle.
+
+## After it launches
+
+If the game now starts but stutters or crashes mid-fight, head to the [stutter and performance guide](/tech/stutter-fix) — the causes and fixes are different once the engine is actually running.
+
+**Keep reading:**
+
+- [Won't Launch — Crashes and Black Screens](/tech/wont-launch-fixes)
+- [Stutter and Performance Fixes](/tech/stutter-fix)
+- [System Requirements](/basics/system-requirements)

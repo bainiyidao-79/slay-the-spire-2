@@ -1,0 +1,57 @@
+---
+title: "Slay the Spire 2 Mods — How to Install DLL and PCK Mods Safely"
+description: "Install Slay the Spire 2 mods: back up your saves, create a lowercase mods folder in the game directory, drop in the DLL and PCK files, launch through Steam, and run unlockall."
+date: "2026-03-09"
+updated: "2026-09-19"
+category: "Tech"
+keywords: ["Slay the Spire 2 mods", "install mods", "mods folder", "DLL PCK", "unlockall", "mod backup"]
+readTime: "5 min read"
+---
+
+The Steam Workshop for Slay the Spire 2 hosts the loader mods, but community mods still circulate as **DLL + PCK** file pairs. Installing them is a two-minute job — the part people skip is the save backup, and that's exactly the part you can't skip: the first mod install resets local profile saves.
+
+<div class="art-ph lead"><img src="/images/sts2-slide-necrobinder.webp" loading="eager" alt="Slay the Spire 2 gameplay"><figcaption>Two files, one folder. And a backup you will be glad exists.</figcaption></div>
+
+## Step 1: back up your saves (mandatory)
+
+Copy this folder to another drive or a USB stick:
+
+```
+C:\Users\<YourName>\AppData\Roaming\SlayTheSpire2\steam\<YourSteamID>
+```
+
+Inside are **profile1 / profile2 / profile3** — your three save slots (see [save file location](/tech/save-file-location) for details). The first mod install is the dangerous one; after a modded launch has succeeded once, adding or removing mods no longer wipes saves.
+
+## Step 2: get the mod files
+
+Download mods from a source you trust — usually a `.zip` archive. Unpack it: the two files that matter are the **DLL** and the **PCK**. Nothing else needs to move.
+
+## Step 3: install into the mods folder
+
+1. Open the game's local folder: Steam → right-click the game → **Manage → Browse local files**.
+2. In the game root, create a folder named **mods** (lowercase).
+3. Drag the DLL and PCK files directly into `mods` — **no nested subfolders**.
+4. Launch the game through Steam. Mods load automatically.
+
+## Step 4: unlock everything (optional)
+
+On the main menu, press **~** (the tilde key, left of 1), type:
+
+```
+unlockall
+```
+
+and press Enter. All characters, cards, relics and modes unlock on the spot — handy for testing mods on a fresh profile.
+
+## Troubleshooting rules
+
+- **Wrong folder is the #1 failure:** `mods` must be in the game root, files flat inside it.
+- **One to two mods at a time:** conflicts are common; when the game breaks, remove mods until it doesn't.
+- **Version matching:** mods built for old game versions crash on launch — re-download mods after big patches.
+- **Multiplayer:** modded builds break co-op sync; keep mods out of [party lobbies](/basics/how-to-join-multiplayer).
+
+**Keep reading:**
+
+- [Console Commands](/tech/console-commands)
+- [Save File Location](/tech/save-file-location)
+- [Launch and Crash Fixes](/tech/wont-launch-fixes)

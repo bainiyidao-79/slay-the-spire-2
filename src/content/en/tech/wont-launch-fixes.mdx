@@ -1,0 +1,59 @@
+---
+title: "Slay the Spire 2 Won't Launch — Crashes, Black Screen and Quick Fixes"
+description: "Slay the Spire 2 won't start? Force OpenGL or Vulkan rendering, verify game files, run as administrator, disable Steam overlay, update GPU drivers and clear shader caches."
+date: "2026-03-25"
+updated: "2026-09-19"
+category: "Tech"
+keywords: ["Slay the Spire 2 won't launch", "crash on startup", "black screen fix", "OpenGL Vulkan launch options", "verify game files"]
+readTime: "5 min read"
+---
+
+Nine out of ten "the game won't start" reports end at the same three fixes: a rendering launch option, a file verification, and a clean driver install. Work down this list in order — most launches recover in the first two steps.
+
+<div class="art-ph lead"><img src="/images/sts2-hero-keyart.webp" loading="eager" alt="Slay the Spire 2 key art"><figcaption>The spire is picky about which renderer it wakes up in.</figcaption></div>
+
+## Fix 1: force a rendering driver (fixes black screens and instant crashes)
+
+The game's renderer is the usual culprit. In Steam: right-click the game → **Properties → General → Launch Options**, then add exactly one of:
+
+```
+--rendering-driver opengl3
+```
+
+If that changes nothing, try:
+
+```
+--rendering-driver vulkan
+```
+
+Launch after each change and keep whichever one opens the game. (You can append `-windowed` to force a window as well.)
+
+## Fix 2: verify game files
+
+Right-click the game → **Properties → Installed Files → Verify integrity of game files**. Steam re-downloads anything corrupted or missing, which covers most post-update crashes.
+
+## Fix 3: run as administrator and kill the overlay
+
+- Right-click the game's exe → **Properties → Compatibility → Run this program as an administrator**.
+- Steam → Properties → General → disable **Enable the Steam Interface** (the in-game overlay), a known interferer.
+
+## Fix 4: system-side cleanup
+
+- **Update GPU drivers** — clean-install the latest NVIDIA/AMD package and reboot.
+- **Close conflicts:** screen recorders, streaming tools, frame-rate monitors, trainers, and (temporarily) antivirus/firewall overlays.
+- **Clear shader caches:** delete the shader cache files in the game's `core` folder, then re-verify files.
+- **Delete stray Sentry files:** in the install folder, remove `libsentry.windows.release.x86_64.bak` and `release_info`, then restart Steam.
+
+## Fix 5: the single-player language quirk
+
+If the game launches but **single-player mode** hangs: temporarily set Windows region to English (US/UK) and the display language to English, then relaunch. It is a known localization-sensitive path.
+
+## Still nothing?
+
+Multiplayer and login failures are network-shaped, not launch-shaped: use wired internet, allow the game and Steam through Windows Firewall, and check our [multiplayer disconnect guide](/tech/multiplayer-disconnect-fixes). As a last resort, uninstall, delete the leftover install folder, and reinstall fresh.
+
+**Keep reading:**
+
+- [Stuck on the Launch Screen](/tech/stuck-on-launch-fixes)
+- [Multiplayer Disconnect Fixes](/tech/multiplayer-disconnect-fixes)
+- [System Requirements](/basics/system-requirements)
